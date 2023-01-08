@@ -16,22 +16,23 @@
 }
 
 .logo {
-    margin-left: 50px;
+    margin-left: 2%;
     width: 25%;
     height: 40px;
 }
 
 .menu{
-    width:80% ;
+    width:55% ;
     height: 40px;
     display: inline;
-    line-height: 40px;
 }
 
-.login {
+/* .login {
     height: 40px;
-    margin-left: 200px;
-}
+    line-height: 40px;
+    display: flex;
+    text-align: center;
+} */
 
 ul {
     height: 40px;
@@ -50,7 +51,6 @@ a {
     padding: 5px 20px;
     height: 40px;
     line-height: 40px;
-    
     font-size: 1rem;
 }
 

@@ -1,0 +1,126 @@
+@media only screen and (max-width: 820px){
+    .header_1{
+        width: 100%;
+        height: 40px;  
+        line-height: 40px;  
+        justify-content: space-between;
+    }
+    .logo {
+        width: 10%;
+        height: 40px;
+        
+    }
+    .logo img {
+        width: 100%;
+        height: 40px;
+    }
+    
+    .col-menu{
+        padding: 5px 8px;
+        
+    }
+    .prev, .next,.text {
+        font-size: 20px
+    }
+    .mySlides{
+        height: 250px;
+    }
+      
+    .mySlides img {
+        width: 100%;
+        height: 250px;
+    }
+
+    .body_history{
+        padding: 20px;
+    }
+    .col_history{
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        
+    }
+
+    .col_history > div > div > a > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .customer-reviews{
+        display: none;
+    }
+    .caption-toprate{
+        padding: 5px 15px;
+    }
+ 
+  }
+
+
+@media only screen and (max-width: 360px){
+    .header_1{
+        width: 100%;
+        height: 30px;  
+        line-height: 30px;  
+        justify-content: space-between;
+    }
+    .logo {
+        width: 100%;
+        height: 30px;
+        margin: auto;
+        
+    }
+    .logo img {
+        width: 50%;
+        height: 30px;
+    }
+
+    .menu, .login {
+        display: none;
+    }
+    .prev, .next,.text {
+        font-size: 15px;
+        margin-left: 0px;
+    }
+    .next{
+        right: 0;
+    }
+    .mySlides{
+        height: 200px;
+    }
+      
+    .mySlides img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .body_history{
+        padding: 20px;
+    }
+    .col_history{
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        
+    }
+
+    h2{
+        font-size: 1rem;
+        margin-left: 5px;
+    }
+
+    .col_history > div > div > a > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .customer-reviews{
+        display: none;
+    }
+    .caption-toprate{
+        padding: 5px 10px;
+    }
+ 
+
+  }
