@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <title>gofood</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+
+    
+</head>
+
+<style>
+    .slideshow-container {
+        width: 100%;
+        position: relative; 
+        margin-top: 10px;  
+    }
+  
+    .mySlides {
+        display:none;
+        width: 100%;
+    }
+
+    .mySlides img {
+        width: 100%;
+        height: 500px;    
+    }
+
+    /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 42%;
+    width: auto;
+    padding: 16px;
+    margin-left: 30px;
+    color: rgb(17, 16, 16);
+    font-weight: bold;
+    font-size: 40px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right:30px;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(216, 213, 213, 0.8);
+    border: none;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 3s;
+  animation-name: fade;
+  animation-duration: 3s;
+}
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+
+  @media only screen and (max-width: 500px) {
+    .prev, .next,.text {
+      font-size: 11px
+    }
+  }
+
+  .body_history{
+    padding: 30px 50px;
+  }
+
+  .header_history {
+    display: flex;
+    justify-content: space-between; 
+    background-color: #310a0a;
+    color: #fff;
+    height: 40px;
+    line-height: 40px;  
+  }
+
+  .header_history h2 {
+    margin-left: 20px;
+  }
+
+  .header_history span {
+    margin-right: 20px;
+    
+  }
+
+  .col_history{
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .col1 {
+    border: 0.5px solid rgb(231, 217, 217);
+  }
+
+
+  .caption{
+    padding: 5px 20px;
+  }
+
+  .caption-header{
+    color: rgb(51, 49, 49);
+  }
+
+  .caption-review {
+    font-size: 0.8rem;
+    color: rgb(94, 89, 89);
+  }
+
+  .button {
+    padding:5px;
+    margin: 10px auto;
+    border: 1px solid rgb(204, 182, 182);
+    text-align: center;
+    cursor: pointer;  
+  }
+
+  .button:hover {
+    border: 1px solid rgb(146, 47, 47);
+  }
+
+  /*  */
+
+  .col {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .col:hover img {
+    opacity: 0.8; 
+    transition: 0.5s;
+    transform: scale(1.1)
+    
+   
+  }
+
+  .col:hover .caption-toprate{
+    transform: scale(1.2);
+    top: 70%;
+    left: 10%;
+    transition: 0.5s;
+  }
+
+  .caption-toprate{
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    padding: 10px 30px;
+    background-color:#fff;
+    border-radius: 5px;
+    font-size: 1.2rem;
+  }
+  .col img {
+    width: 100%;
+  }
+
+  .review_restaurent{
+    padding: 20px;
+    margin-top: 5px;
+    background-color: rgb(230, 227, 227);
+    display: flex;
+    justify-content: space-between;
+  }
+  .review{
+    border: 1px solid rgba(219, 214, 214, 0.795);
+    padding: 10px;
+    height: 150px;
+    max-width: 35%;
+    display: flex; 
+  }
+
+  .review:hover{
+    border: 1px solid rgba(212, 195, 195, 0.795);
+    transform: scale(1.1);
+    scale: 1;
+    transition: 0.8s;
+
+  }
+  .avatars {
+    max-height: 100px;
+    padding-right: 20px;
+    
+  }
+  .tieude{
+    color: #fff;
+  }
+  .ends{
+    background-color: black;
+  }
+  .end{
+    display: flex;
+    padding: 30px 50px;
+    justify-content: space-between;
+    
+  }
+
+  .col-end{
+    max-width: 25%;
+
+  }
+  .tieude{
+    margin-bottom: 20px;
+    color: #d3cece;
+
+  }
+
+  .item-col{
+    display:grid;
+  }
+  .item-col a{
+    margin-bottom: 8px;
+    color: rgb(161, 156, 156);
+  }
+
+  .follow{
+    text-align: center;
+    padding: 40px;
+  }
+  .fab {
+    font-size: 2rem;
+    color: #fff;
+    width: 40px;
+  }
+  .fab:hover {
+    transform: scale(1.4);
+  transition: ease-in-out 0.5s;
+    
+  }
+
+  
+
+
+</style>
+<body>
+    <div class="header">
+        <div class="header_1">
+            <div class="logo">
+                <a href="" class=""><img src="./image/logo.PNG" alt=""></a>
+            </div>
+            <div id="menu"> 
+                <ul>
+                  <li><a class="col-menu" href="">Trang chủ</a></li>
+                  <li><a class="col-menu" href="">Dịch vụ</a></li>
+                  <li><a class="col-menu" href="">Sản phẩm</a></li>
+                  <li><a class="col-menu" href="">Giới thiệu</a></li>
+                  <li><a class="col-menu" href="">Liên hệ</a></li>
+                </ul>  
+              </div>
+            <div class="login">
+                <a href="./dangky.html" class="col-menu">Đăng Ký</a>
+                <a href="" class="col-menu">Đăng Nhập</a>   
+            </div>
+        </div>
+
+        <div class="body">
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                  <img src="./image/banner-3.jpg">
+                </div>
+                
+                <div class="mySlides fade">
+                  <img src="./image/banner-4.jpg" >
+                </div>
+                
+                <div class="mySlides fade">
+                  <img src="./image/banner-6.jpg">
+                </div>
+
+                <div class="mySlides fade">
+                  <img src="./image/banner-1.jpg" >
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="./image/banner-4.jpg" >
+                  </div>
+                
+                
+                
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+                
+            </div>
+            <br>
+                
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+                <span class="dot" onclick="currentSlide(4)"></span> 
+                <span class="dot" onclick="currentSlide(5)"></span> 
+            </div>
+
+            <!-- xử lý slideshow-container bằng js -->
+            <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {slideIndex = 1}    
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+                }
+                for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";  
+                dots[slideIndex-1].className += " active";
+            }
+            </script>
+            
+        </div>
+
+        <div class="body_history">
+            <div class="header_history">
+                <h2 class="history">Sản phẩm mới</h3>
+                <span class="history-all"><a href="">Xem thêm</a></span>
+            </div>
+
+            <div class="col_history">
+                <div class="col1">
+                    <div class="img">
+                        <a href="" class="col-image"><img src="./image/image-history/order-1.jpg" alt=""></a>
+                    </div>
+    
+                    <div class="caption">
+                        <h4 class=""><a href="" class="caption-header" >Chilli Chicken Pizza</a></h4>
+                        <span class="caption-review">Big Bites, Brooklyn</span>
+                        <div class="button"><a href="">Order</a></div>
+                    </div>
+
+                </div>
+                <div class="col1">
+                    <div class="img">
+                        <a href="" class="col-image"><img src="./image/image-history/order-2.jpg" alt=""></a>
+                    </div>
+    
+                    <div class="caption">
+                        <h4 class=""><a href="" class="caption-header">Chilli Chicken Pizza</a></h4>
+                        <span class="caption-review">Big Bites, Brooklyn</span>
+                        <div class="button"><a href="">Order</a></div>
+                    </div>
+
+                </div>
+                <div class="col1">
+                    <div class="img">
+                        <a href="" class="col-image"><img src="./image/image-history/order-3.jpg" alt=""></a>
+                    </div>
+    
+                    <div class="caption">
+                        <h4 class=""><a href="" class="caption-header">Chilli Chicken Pizza</a></h4>
+                        <span class="caption-review">Big Bites, Brooklyn</span>
+                        <div class="button"><a href="">Order</a></div>
+                    </div>
+
+                </div>
+                <div class="col1">
+                    <div class="img">
+                        <a href="" class="col-image"><img src="./image/image-history/order-4.jpg" alt=""></a>
+                    </div>
+    
+                    <div class="caption">
+                        <h4 class=""><a href="" class="caption-header">Chilli Chicken Pizza</a></h4>
+                        <span class="caption-review">Big Bites, Brooklyn</span>
+                        <div class="button"><a href="">Order</a></div>
+                    </div>
+
+                </div>
+                
+            </div>
+
+        </div>
+
+        <div class="body_history">
+            <div class="header_history">
+                <h2 class="history">Sản phẩm bán chạy</h3>
+                <span class="history-all"><a href="">Xem thêm</a></span>
+            </div>
+
+            <div class="col_history">
+                <div class="col1">
+                    <div class="img">
+                        <a href="" class="col-image"><img src="./image/image-history/order-1.jpg" alt=""></a>
+                    </div>
+    
+                    <div class="caption">
+                        <h4 class=""><a href="" class="caption-header" >Chilli Chicken Pizza</a></h4>
+                        <span class="caption-review">Big Bites, Brooklyn</span>
+                        <div class="button"><a href="">Order</a></div>
+                    </div>
+
+                </div>
+                <div class="col1">
+                    <div class="img">
+                        <a href="" class="col-image"><img src="./image/image-history/order-2.jpg" alt=""></a>
+                    </div>
+    
+                    <div class="caption">
+                        <h4 class=""><a href="" class="caption-header">Chilli Chicken Pizza</a></h4>
+                        <span class="caption-review">Big Bites, Brooklyn</span>
+                        <div class="button"><a href="">Order</a></div>
+                    </div>
+
+                </div>
+                <div class="col1">
+                    <div class="img">
+                        <a href="" class="col-image"><img src="./image/image-history/order-3.jpg" alt=""></a>
+                    </div>
+    
+                    <div class="caption">
+                        <h4 class=""><a href="" class="caption-header">Chilli Chicken Pizza</a></h4>
+                        <span class="caption-review">Big Bites, Brooklyn</span>
+                        <div class="button"><a href="">Order</a></div>
+                    </div>
+
+                </div>
+                <div class="col1">
+                    <div class="img">
+                        <a href="" class="col-image"><img src="./image/image-history/order-4.jpg" alt=""></a>
+                    </div>
+    
+                    <div class="caption">
+                        <h4 class=""><a href="" class="caption-header">Chilli Chicken Pizza</a></h4>
+                        <span class="caption-review">Big Bites, Brooklyn</span>
+                        <div class="button"><a href="">Order</a></div>
+                    </div>
+
+                </div>
+                
+            </div>
+
+        </div>
+
+        <div class="body_history body_toprate">
+            <div class="header_history">
+                <h2 class="history">Thương hiệu nổi tiếng</h3>
+                
+            </div>
+            
+            <div class="col_history body_toprate">
+              <div class="col">
+                <a href="" class="col"><img class="col1" src="./image/image-top-rate/img45-480x380-1.jpg" alt="" class=""></a>
+                <div class="caption-toprate">
+                  <a href="" class="">Bittet</a>
+                </div>
+              </div>
+
+              <div class="col">
+                
+                <a href="" class="col"><img class="col1" src="./image/image-top-rate/img47-480x380-1.jpg" alt="" class=""></a>
+                <div class="caption-toprate">
+                  <a href="" class="">Bittet</a>
+                </div>
+              </div>
+              <div class="col">
+                <a href="" class="col"><img class="col1" src="./image/image-top-rate/img48-480x380-1.jpg" alt="" class=""></a>
+                <div class="caption-toprate">
+                  <a href="" class="">Bittet</a>
+                </div>
+              </div>
+
+            </div>
+
+
+
+            
+                
+
+            
+        </div>
+        <br>
+
+        <div class="body_history">
+          <div class="header_history">
+            <h2 class="history">Đánh giá</h3>    
+        </div>
+          <div class="review_restaurent">
+            <div class="review">
+              <a href="" class=""><img class="avatars" src="./image/avatar/avatar1.png" alt=""></a>
+              <p class="">Đồ ăn ngon, shop đóng gói hàng cẩn thận, shipper nhiệt tình</p>
+            </div>
+            <div class="review">
+            
+              <a href="" class=""><img class="avatars" src="./image/avatar/avatar1.png" alt=""></a>
+              <p class="conten">Đồ ăn ngon, shop đóng gói hàng cẩn thận, shipper nhiệt tình</p>
+            
+            </div>
+
+          </div>
+          
+
+        </div>
+
+        <div class="ends">
+          <div class="end">
+            <div class="col_end">
+              <h4 class="tieude">Về cửa hàng</h6>
+              <div class="item-col">
+                <a href="" class="">Call:012380499</a>
+                <a href="" class="">EMail:012380499</a>
+                <a href="" class="">FB:@htttrangle</a>
+                <a href="" class="">IG:trangkely123</a>
+  
+              </div>
+                
+            </div>
+          
+            <div class="col_end">
+              <h4 class="tieude">Điều khoản</h6>
+                <div class="item-col">
+                  <a href="" class="">Call:012380499</a>
+                  <a href="" class="">EMail:012380499</a>
+                  <a href="" class="">FB:@htttrangle</a>
+                  <a href="" class="">IG:trangkely123</a>
+  
+                </div>
+            </div>
+            <div class="col_end">
+              <h4 class="tieude">Chính sách</h6>
+                <div class="item-col">
+                  <a href="" class="">Call:012380499</a>
+                  <a href="" class="">EMail:012380499</a>
+                  <a href="" class="">FB:@htttrangle</a>
+                  <a href="" class="">IG:trangkely123</a>
+  
+                </div>
+            </div>
+            <div class="col_end">
+              <h4 class="tieude">Thông tin mới nhất</h6>
+                <div class="item-col">
+                  <a href="" class="">Call:012380499</a>
+                  <a href="" class="">EMail:012380499</a>
+                  <a href="" class="">FB:@htttrangle</a>
+                  <a href="" class="">IG:trangkely123</a>
+  
+                </div>
+            </div>
+
+          </div>
+          <br>
+          <div class="follow">
+            <h3 class="tieude follows">Follow</h3>
+            <div class="icon">
+              <a href="" class=""><i class="fab fa-facebook-square"></i></a>
+              <a href="" class=""><i class="fab fa-instagram"></i></a>
+              <a href="" class=""><i class="fab fa-twitter-square"></i></a>
+              <a href="" class=""><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>  
+        </div>
+    </div>   
+</body>
+</html>

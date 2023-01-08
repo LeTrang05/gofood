@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Đăng ký</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<style>
+    h1, label{
+    color: rgb(31, 30, 30);
+    }
+
+    .container {
+        box-shadow:4px 4px 10px rgba(0,0,0,0.2);
+        padding: 20px 40px;
+        width: 22%;
+        margin: 40px auto;
+    }
+
+    .form-field{
+        display: inline-block; 
+        width: 100%;
+        margin-bottom: 20px;
+        margin: 10px auto;
+    }
+
+    .form-field input {
+        width: 94%;
+        padding: 10px;
+        border: none;
+        border-radius:10px;
+        border: 1px solid rgb(236, 233, 233);
+        margin-top: 5px;
+        outline: none;
+    }
+
+    .submit{
+        text-align: center;
+    }
+
+    .form-field button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 60px;
+        border: none;
+        cursor: pointer;
+        opacity: 0.8;
+        border-radius: 10px;
+        margin: 20px;   
+    }
+
+    .form-field button:hover {
+        opacity:1;
+    }
+
+    small{
+        color: red;
+    }
+</style>
+
+
+<body>
+    <div class="container">
+        <form id="signup" class="form">
+            <h2>Đăng ký</h2>
+            <div class="form-field">
+                <label for="username">Username:</label>
+                <input type="text" placeholder="Nhập username" name="username" id="username" autocomplete="off">
+                <small></small>
+            </div>
+
+            <div class="form-field">
+                <label for="email">Email:</label>
+                <input type="text" placeholder="Nhập Email" name="email" id="email" autocomplete="off">
+                <small></small>
+            </div>
+
+            <div class="form-field">
+                <label for="password">Password:</label>
+                <input type="password" placeholder="Nhập mật khẩu" name="password" id="password" autocomplete="off">
+                <small></small>
+            </div>
+
+
+            <div class="form-field">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" placeholder="Nhập lại mật khẩu" name="confirm-password" id="confirm-password" autocomplete="off">
+                <small></small>
+            </div>
+
+            <div class="form-field submit">
+                <button type="submit" class="button">Đăng ký</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="./validate.js"></script>
+</body>
+</html>
