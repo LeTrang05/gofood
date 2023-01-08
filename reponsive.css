@@ -97,7 +97,7 @@
     .body_history{
         padding: 20px;
     }
-    .col_history{
+    .col_history, .end{
         display: grid;
         grid-gap: 20px;
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -120,7 +120,52 @@
     }
     .caption-toprate{
         padding: 5px 10px;
+        font-size: 0.8rem;
     }
+
  
+    .fas {
+        margin-left: 60px;  
+    }
+
+  .menu-navbars {
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    right: -5px;
+  }
+ 
+  .navbar-menu {
+    opacity: 0;
+    z-index: 1;
+    position: absolute;
+    background-color: #f7f7f7;
+    box-shadow: 0px 8px 16px 0px rgba(143, 57, 57, 0.2);
+  }
+ 
+  .navbar-menu a {
+    color: black;
+    padding: 2px 12px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .fas:hover .navbar-menu {
+    opacity: 1;
+    transition:ease-in-out;
+    transform: 0.8s;
+    
+  }
+
+  .navbar-menu a:hover {
+    background-color: #bd1313;
+
+  }
+
+  
+
+    
+ 
+    
 
   }
