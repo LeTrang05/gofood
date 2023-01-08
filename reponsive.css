@@ -133,44 +133,51 @@
         font-size: 0.8rem;
     }
 
- 
-    .fas {
-        margin-left: 60px;  
+    .button-navbar{
+       
+        margin-right: 10px;
+    
     }
 
+ 
+    .fas {
+        display: block;
+        
+    }
+
+
   .menu-navbars {
-    position: relative;
-    display: inline-block;
-    width: 40%;
-    right: -5px;
+    display: block;
+    position: static;
+    width: 30px;
   }
  
   .navbar-menu {
-    opacity: 0;
+    display: none;
     z-index: 1;
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-color: #f7f7f7;
-    box-shadow: 0px 8px 16px 0px rgba(143, 57, 57, 0.2);
+    padding: 20px; 
   }
  
   .navbar-menu a {
     color: black;
-    padding: 2px 12px;
+    padding: 10px 12px;
     text-decoration: none;
     display: block;
+    border-bottom: 1px solid #cfbbbb;
   }
 
-  .fas:hover .navbar-menu {
-    opacity: 1;
-    transition:ease-in-out;
-    transform: 0.8s;  
+  .delete{
+    top:3%;
+    right: 10%;
+    position: absolute;
+    
   }
 
-  .navbar-menu a:hover {
-    background-color: #cfbbbb;
-
-  }
-
-  
 
 }

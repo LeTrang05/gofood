@@ -118,7 +118,7 @@ const showSuccess = (input) => {
 
 
 form.addEventListener('submit', function (e) {
-    // prevent the form from submitting
+    
     e.preventDefault();
 
     // validate fields
@@ -169,3 +169,8 @@ form.addEventListener('input', debounce(function (e) {
             break;
     }
 }));
+
+
+
+
+
